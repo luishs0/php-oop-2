@@ -57,7 +57,7 @@ $product_array = [$cat_food, $dog_food, $cat_toy, $dog_toy, $cat_bed, $dog_bed];
                                 <div class="card-text mt-4">
                                     <p>Price: <?php echo $product_array[$i]->price ?> € </p>
                                     <p>Weight: <?php echo $product_array[$i]->weight ?> </p>
-                                    <p>Category: <?php echo $product_array[$i]->category->name ?> </p>
+                                    <p>Category: <?php echo $product_array[$i]->category->icon ?> </p>
                                     <p>Type: <?php echo $product_array[$i]->type ?> </p>
                                 </div>
                             </div>
