@@ -29,7 +29,7 @@ trait LiquidFood
     }
 }
 
-class Soap extends Product
+class Soup extends Product
 {
     use LiquidFood;
     public $taste;
