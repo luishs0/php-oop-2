@@ -12,7 +12,8 @@ $cat_toy = new Product("Cat's Toy", 9.99, "120gr", $cats, "https://naturalpetsho
 $dog_toy = new Product("Dog's Toy", 12.99, "400gr", $dogs, "https://static1.lucasylola.es/12133-thickbox_default/juguete-para-perro-hueso-de-caucho.jpg", "Toy");
 $cat_bed = new Product("Cat's Bed", 19.99, "850gr", $cats, "https://m.media-amazon.com/images/I/614Prp5uzHL._AC_SX466_.jpg", "Wellness");
 $dog_bed = new Product("Dog's Bed", 29.99, "1200gr", $dogs, "http://cdn.shopify.com/s/files/1/0109/2596/5374/products/cama-antiansiedad-mascotas-main.jpg?v=1592496741", "Wellness");
-$product_array = [$cat_food, $dog_food, $cat_toy, $dog_toy, $cat_bed, $dog_bed];
+$dog_soup = new Soup("Dog Soup", 9.99, "200gr", $dogs, "", "Food", "Fish");
+$product_array = [$cat_food, $dog_food, $cat_toy, $dog_toy, $cat_bed, $dog_bed, $dog_soup];
 ?>
 
 <!DOCTYPE html>
@@ -51,7 +52,13 @@ $product_array = [$cat_food, $dog_food, $cat_toy, $dog_toy, $cat_bed, $dog_bed];
                 <?php for ($i = 0; $i < count($product_array); $i++) { ?>
                     <div class="col-6 col-sm-4 mb-4">
                         <div class="card" style="width: 100%;">
-                            <img src="<?php echo $product_array[$i]->img; ?>" class="card-img-top" style="height: 13rem; object-fit: cover;">
+                            <?php  ?>
+                            <img src="<?php try {
+                                            echo $product_array[$i]->showImg();
+                                        } catch (Exception $ex) {
+                                            echo "https://st3.depositphotos.com/23594922/31822/v/600/depositphotos_318221368-stock-illustration-missing-picture-page-for-website.jpg";
+                                        } ?>" class="card-img-top" style="height: 13rem; object-fit: cover;">
+
                             <div class="card-body">
                                 <h5 class="card-title"><?php echo $product_array[$i]->name; ?></h5>
                                 <div class="card-text mt-4">

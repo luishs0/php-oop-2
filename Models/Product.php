@@ -19,6 +19,15 @@ class Product
         $this->img = $img;
         $this->type = $type;
     }
+
+    public function showImg()
+    {
+        if ($this->img === "") {
+            throw new Exception("No img");
+        } else {
+            return $this->img;
+        }
+    }
 }
 
 trait LiquidFood
